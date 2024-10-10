@@ -79,7 +79,7 @@ public class UserDaoImpl implements UserDao{
 		
 		System.out.println("Inside The Dao Layer");
 		
-		String sql = "select * from ausers where email = ? ";
+		String sql = "select * from Ausers where email = ? ";
 		
 		UserLoginDto userLoginDto = jdbcTemplate.queryForObject(sql,new BeanPropertyRowMapper<UserLoginDto>(UserLoginDto.class),email);
 		
