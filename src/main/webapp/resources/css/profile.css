@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #34495e;
+  --accent-color: #3498db;
+  --text-color: #333;
+  --text-light: #777;
+  --bg-color: #f5f7fa;
+  --card-bg: #ffffff;
+  --header-bg: rgba(44, 62, 80, 0.95);
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --icon-bg: #ecf0f1;
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: var(--header-bg);
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 25px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li a i {
+  margin-right: 8px;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-logout {
+  background-color: #e74c3c;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.btn-logout:hover {
+  background-color: #c0392b;
+}
+
+main {
+  flex: 1;
+  max-width: 800px;
+  width: 95%;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.profile-header h1 {
+  margin: 0 0 0.5rem;
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.profile-header p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.detail-card {
+  background-color: var(--bg-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: var(--transition);
+}
+
+.detail-card:hover {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.detail-card h2 {
+  color: var(--secondary-color);
+  margin-bottom: 1.25rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-bottom: 1px solid #e1e8ed;
+  padding-bottom: 0.5rem;
+}
+
+.detail-card p {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.detail-card i {
+  margin-right: 1rem;
+  color: var(--accent-color);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--icon-bg);
+  border-radius: 50%;
+  font-size: 0.9rem;
+}
+
+.profile-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.btn-change-password {
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: var(--transition);
+  text-align: center;
+  background-color: var(--accent-color);
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.btn-change-password:hover {
+  background-color: #2980b9;
+  box-shadow: 0 2px 4px rgba(52, 152, 219, 0.3);
+}
+
+footer {
+  background-color: var(--header-bg);
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 8px 0;
+  }
+
+  main {
+    margin: 1rem auto;
+    padding: 1.5rem;
+  }
+
+  .detail-card {
+    padding: 1.25rem;
+  }
+
+  .profile-header h1 {
+    font-size: 2rem;
+  }
+
+  .profile-header p {
+    font-size: 1rem;
+  }
+}
