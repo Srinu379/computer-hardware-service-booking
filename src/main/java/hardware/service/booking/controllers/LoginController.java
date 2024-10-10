@@ -51,6 +51,13 @@ public class LoginController {
 //			try {
 				System.out.println("Hello   Srinu");
 				UserLoginDto userInfo = userDaoImpl.getUserDetails(user.getEmail());
+				
+				if(userInfo==null)
+				{
+					model.addAttribute("errorMessage","Your username or password is invalid");
+					return "login";
+				}
+				
 				if(!validateLogin.validateLogin(user,userInfo))
 				{
 					model.addAttribute("errorMessage","Your username or password is invalid");
