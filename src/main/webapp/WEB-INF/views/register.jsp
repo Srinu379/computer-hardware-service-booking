@@ -41,7 +41,7 @@
   <div class="form-header">
     <h2>Create Account</h2>
   </div>
-  <form:form action="send-otp" modelAttribute="userRegistration" onsubmit="return validate()">
+  <form:form action="send-otp" modelAttribute="userRegistration" onsubmit="return false">
     <div class="form-group">
       <label for="email">Email</label>
       <form:input path="email" id="email"/>
