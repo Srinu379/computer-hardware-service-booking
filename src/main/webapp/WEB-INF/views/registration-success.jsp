@@ -15,14 +15,6 @@
             <p>Thank you for registering with Computer Hardware Service.</p>
             <p>Your account has been created successfully.</p>
         </div>
-        <div class="next-steps">
-            <h3>Next Steps:</h3>
-            <ul>
-                <li>Check your email for a confirmation link</li>
-                <li>Complete your profile information</li>
-                <li>Explore our services</li>
-            </ul>
-        </div>
         <div class="action-buttons">
             <a href="<c:url value='/login' />" class="btn btn-primary">Login Now</a>
             <a href="<c:url value='/' />" class="btn btn-secondary">Return to Home</a>
