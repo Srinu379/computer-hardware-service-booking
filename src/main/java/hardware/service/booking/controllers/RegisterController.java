@@ -29,6 +29,8 @@ public class RegisterController {
 	
 	private int otp;
 	
+	private String passWord;
+	
 	@RequestMapping("/")
 	public String getLandingPage() {
 		
@@ -48,9 +50,11 @@ public class RegisterController {
 		
 		if(userLoginDto!=null)
 		{
-			model.addAttribute("userExists","already registered with these email");
+			model.addAttribute("userExists","This email address is already registered");
 			return "register";
 		}
+		
+		passWord = userDto.getPassWord();
 		
 		otp = getOtp.getOtp();
 		
@@ -70,7 +74,13 @@ public class RegisterController {
 		if(result.hasErrors())
 		{
 				
-			return "register";
+			return "register-otp";
+		}
+		
+		if(!passWord.equals(userDto.getPassWord()))
+		{
+			model.addAttribute("inValidPassword","Passwords do not match, Please ensure both passwords are identical");
+			return "register-otp";
 		}
 		
 		try {
@@ -78,7 +88,7 @@ public class RegisterController {
 			if(!validateOtp.valid(otp,userDto.getOtp()))
 			{
 				model.addAttribute("invalid","invalid otp");
-				return "register";
+				return "register-otp";
 			}
 				userDaoImpl.insert(userDto);
 			

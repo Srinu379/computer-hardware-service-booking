@@ -23,7 +23,7 @@ public class UserDto {
 	
 	private String passWord;
 	
-	private int otp;
+	private int otp=0000;
 	
 
 	public String getId() {

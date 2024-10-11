@@ -33,7 +33,7 @@
                         <i class="far fa-calendar-alt"></i>
                         Registered time: ${user.createdAt}
                     </p>
-                    <a href="<c:url value='edit-page'/>" class="edit-btn">Edit</a>
+                    <a href="#" class="edit-btn">Edit</a>
                 </div>
             </c:forEach>
             </c:if>

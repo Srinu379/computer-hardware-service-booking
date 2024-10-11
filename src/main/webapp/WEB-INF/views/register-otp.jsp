@@ -41,30 +41,31 @@
   <div class="form-header">
     <h2>Create Account</h2>
   </div>
-  <form:form action="process-register" modelAttribute="userRegistration">
+  <form:form action="process-register" modelAttribute="userRegistration" onsubmit="return validate()">
     <div class="form-group">
       <label for="email">Email</label>
-      <form:input path="email" id="email" type="email" required="true"/>
+      <form:input path="email" id="email" type="email" required="true" readonly="true"/>
       <form:errors path="email" cssClass="error"/>
     </div>
     
     <div class="form-group">
       <label for="userName">Username</label>
-      <form:input path="userName" id="userName" />
+      <form:input path="userName" id="userName" readonly="true"/>
       <form:errors path="userName" cssClass="error"/>
     </div>
     
     <div class="form-group">
-      <label for="passWord">Password</label>
-      <form:password path="passWord" id="passWord" />
+      <label for="passWord">Confirm Password</label>
+      <form:password path="passWord" id="passWord"/>
       <form:errors path="passWord" cssClass="error"/>
+      <p class="error">${inValidPassword}</p>
     </div>
     
     <div class="form-group">
       <label for="passWord">Enter OTP</label>
       <form:input path="otp" id="otp" />
       <form:errors path="otp" cssClass="error"/>
-      <p>${invalid}</p>
+      <p class="error">${invalid}</p>
     </div>
     
     <input type="submit" value="Register">

@@ -80,6 +80,11 @@ public class EHomePageController {
 	{
 		String email = (String) session.getAttribute("email");
 		
+		if(email==null)
+		{
+			return "e-homepage";
+		}
+		
 		UserLoginDto user = userDaoImpl.getUserDetails(email);
 		
 		model.addAttribute("users",user);

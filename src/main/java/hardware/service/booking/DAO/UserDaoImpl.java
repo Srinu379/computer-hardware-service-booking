@@ -4,6 +4,7 @@ package hardware.service.booking.DAO;
 
 import java.util.List;
 
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -66,11 +67,19 @@ public class UserDaoImpl implements UserDao{
 		
 		String sql = "select * from users where email = ? ";
 		
+		try {
+			
 		UserLoginDto userLoginDto = jdbcTemplate.queryForObject(sql,new BeanPropertyRowMapper<UserLoginDto>(UserLoginDto.class),email);
 		
-		System.out.println(userLoginDto.getEmail());
-		
 		return userLoginDto;
+		}
+		
+		catch(EmptyResultDataAccessException e) {
+			
+			return null;
+			
+		}
+		
 		
 	}
 	
