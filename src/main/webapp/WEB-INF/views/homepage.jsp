@@ -12,7 +12,7 @@
 <body>
     <header>
         <nav>
-            <div class="logo">Service Booking</div>
+            <div class="logo">Tech Fix</div>
             <input type="checkbox" id="check">
             <label for="check" class="checkbtn">
                 <i class="fas fa-bars"></i>
@@ -106,7 +106,7 @@
             </div>
             <div class="footer-section">
                 <h3>Contact Us</h3>
-                <p>Email: info@servicebooking.com</p>
+                <p>Email: 2210030391@klh.edu.in</p>
                 <p>Phone: (123) 456-7890</p>
             </div>
             <div class="footer-section">

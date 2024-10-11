@@ -88,7 +88,7 @@
             </div>
             <div class="footer-section">
                 <h3>Contact Us</h3>
-                <p>Email: support@techfixsolutions.com</p>
+                <p>Email: 2210030391@klh.edu.in</p>
                 <p>Phone: (123) 456-7890</p>
             </div>
         </div>

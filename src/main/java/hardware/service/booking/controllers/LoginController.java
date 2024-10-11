@@ -103,7 +103,7 @@ public class LoginController {
 				if(userInfo==null)
 				{
 					model.addAttribute("errorMessage","Your username or password is invalid");
-					return "login";
+					return "login-page";
 				}
 				
 				if(!validateLogin.validateLogin(user,userInfo))
@@ -190,7 +190,7 @@ public class LoginController {
 			if(!validateOtp.valid(otp,userForgotPassword.getOtp()))
 			{
 				model.addAttribute("invalid","invalid otp");
-				return "register-password-otp";
+				return "forgot-password-otp";
 			}
 			
 			userDaoImpl.updatePassword(userForgotPassword);

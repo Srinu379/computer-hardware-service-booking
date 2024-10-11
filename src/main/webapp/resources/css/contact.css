@@ -34,6 +34,9 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 80px;
 }
 
 .logo {
@@ -51,11 +54,35 @@ nav ul li {
     margin-left: 2rem;
 }
 
+.btn-logout {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-logout:hover {
+    background-color: #45a049;
+}
+
+/* Hamburger menu styles */
+.checkbtn {
+    font-size: 30px;
+    color: #4CAF50;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
 /* Main content styles */
 main {
     flex: 1;
-    padding-top: 80px; /* To account for fixed header */
-    padding-bottom: 4rem; /* Add more padding at the bottom */
+    padding-top: 80px;
+    padding-bottom: 2rem;
 }
 
 .contact-content {
@@ -96,7 +123,7 @@ p {
     height: 150px;
 }
 
-.contact-form button {
+.contact-form input[type="submit"] {
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -107,7 +134,7 @@ p {
     transition: background-color 0.3s ease;
 }
 
-.contact-form button:hover {
+.contact-form input[type="submit"]:hover {
     background-color: #45a049;
 }
 
@@ -117,20 +144,71 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1rem 0;
-    margin-top: auto; /* Push footer to bottom */
+    margin-top: auto;
 }
 
 /* Responsive design */
-@media (max-width: 768px) {
-    nav {
+@media (max-width: 952px) {
+    .logo {
+        font-size: 25px;
+    }
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 858px) {
+    .checkbtn {
+        display: block;
+        float: right;
+    }
+    nav ul {
+        position: fixed;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
         flex-direction: column;
     }
-
-    nav ul {
-        margin-top: 1rem;
-    }
-
     nav ul li {
-        margin: 0.5rem 0;
+        display: block;
+        margin: 20px 0;
+        line-height: 30px;
+    }
+    nav ul li a {
+        font-size: 20px;
+        color: white;
+    }
+    .btn-logout {
+        background-color: transparent;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        display: inline-block;
+        margin-top: 20px;
+    }
+    #check:checked ~ ul {
+        left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 20px;
+    }
+    nav {
+        padding: 0 3%;
+    }
+    nav ul li {
+        margin: 15px 0;
+    }
+    nav ul li a, .btn-logout {
+        font-size: 18px;
+    }
+    .contact-content {
+        padding: 1.5rem;
     }
 }
