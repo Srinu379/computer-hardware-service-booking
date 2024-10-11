@@ -7,11 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Service Booking - Home</title>
     <link rel="stylesheet" href="<c:url value='/resources/css/homepage.css' />">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">Service Booking</div>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
             <ul>
                 <li><a href="<c:url value='homepage' />">Home</a></li>
                 <li><a href="<c:url value='services' />">Services</a></li>
@@ -22,8 +27,7 @@
             </ul>
         </nav>
     </header>
-
-    <main>
+   <main>
         <section id="hero">
             <h1>Book Your Service Today</h1>
             <p>Fast, reliable, and professional services at your fingertips</p>

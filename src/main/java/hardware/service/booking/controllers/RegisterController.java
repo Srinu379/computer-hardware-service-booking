@@ -1,11 +1,11 @@
 package hardware.service.booking.controllers;
 
 import org.springframework.stereotype.Controller;
+
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import hardware.service.booking.DAO.UserDaoImpl;
 import hardware.service.booking.DTO.UserDto;
@@ -27,7 +27,7 @@ public class RegisterController {
 	
 	private SendMessage message = new SendMessage();
 	
-	private int otp;
+	private String otp;
 	
 	private String passWord;
 	

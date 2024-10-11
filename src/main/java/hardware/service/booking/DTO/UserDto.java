@@ -23,7 +23,7 @@ public class UserDto {
 	
 	private String passWord;
 	
-	private int otp=0000;
+	private String otp;
 	
 
 	public String getId() {
@@ -64,11 +64,11 @@ public class UserDto {
 		this.passWord = passWord;
 	}
 	
-	public int getOtp() {
+	public String getOtp() {
 		return otp;
 	}
 
-	public void setOtp(int otp) {
+	public void setOtp(String otp) {
 		this.otp = otp;
 	}
 	

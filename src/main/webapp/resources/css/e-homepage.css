@@ -31,7 +31,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    flex-wrap: wrap;
+    height: 80px;
 }
 
 .logo {
@@ -43,12 +43,10 @@ nav {
 nav ul {
     display: flex;
     list-style: none;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
 nav ul li {
-    margin: 0.5rem 1rem;
+    margin-left: 2rem;
 }
 
 .btn-logout {
@@ -61,6 +59,20 @@ nav ul li {
 
 .btn-logout:hover {
     background-color: #45a049;
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: #4CAF50;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
 }
 
 /* Main content styles */
@@ -174,40 +186,59 @@ footer {
 }
 
 /* Responsive design */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: center;
+@media (max-width: 952px) {
+    .logo {
+        font-size: 30px;
+        padding-left: 50px;
     }
+    nav ul li a {
+        font-size: 16px;
+    }
+}
 
+@media (max-width: 858px) {
+    .checkbtn {
+        display: block;
+    }
     nav ul {
-        flex-direction: column;
-        align-items: center;
+        position: fixed;
         width: 100%;
-    }
-
-    nav ul li {
-        margin: 0.5rem 0;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
         text-align: center;
+        transition: all .5s;
+        flex-direction: column;
     }
-
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a {
+        font-size: 20px;
+        color: white;
+    }
     .btn-logout {
-        margin-top: 0.5rem;
+        background-color: transparent;
+        color: white;
+        padding: 0;
     }
-
+    #check:checked ~ ul {
+        left: 0;
+    }
+    
     #hero h1 {
         font-size: 2rem;
     }
-
     #hero p {
         font-size: 1rem;
     }
-
     .service-grid,
     .features-grid {
         grid-template-columns: 1fr;
     }
-
     .footer-content {
         grid-template-columns: 1fr;
     }
@@ -216,20 +247,20 @@ footer {
 @media (max-width: 480px) {
     .logo {
         font-size: 1.2rem;
+        padding-left: 20px;
     }
-
     nav {
-        padding: 1rem 3%;
+        padding: 0 3%;
     }
-
+    .checkbtn {
+        margin-right: 20px;
+    }
     section {
         padding: 2rem 3%;
     }
-
     #hero {
         padding: 4rem 3%;
     }
-
     .btn-cta {
         padding: 0.5rem 1rem;
         font-size: 1rem;

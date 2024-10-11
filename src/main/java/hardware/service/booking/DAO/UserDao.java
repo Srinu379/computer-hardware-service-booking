@@ -2,6 +2,8 @@ package hardware.service.booking.DAO;
 
 import java.util.List;
 
+import hardware.service.booking.DTO.ForgotPasswordDto;
+import hardware.service.booking.DTO.UpdatePasswordDto;
 import hardware.service.booking.DTO.UserDto;
 import hardware.service.booking.DTO.UserIdDto;
 import hardware.service.booking.DTO.UserIssueDto;
@@ -38,4 +40,10 @@ public interface UserDao {
 	int getCompletedCount();
 	
 	int getPendingCount();
+	
+	void updatePassword(ForgotPasswordDto user);
+	
+	boolean changePassword(UpdatePasswordDto user);
+	
+	boolean setNewPassword(UpdatePasswordDto user);
 }

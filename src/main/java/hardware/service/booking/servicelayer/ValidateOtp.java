@@ -2,9 +2,9 @@ package hardware.service.booking.servicelayer;
 
 public class ValidateOtp {
 
-	public boolean valid(int otp,int userOtp)
+	public boolean valid(String otp,String userOtp)
 	{
-		if(otp==userOtp)
+		if(otp.equals(userOtp))
 			return true;
 		else
 			return false;

@@ -10,17 +10,22 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.stereotype.Component;
 
+import hardware.service.booking.DTO.ForgotPasswordDto;
+import hardware.service.booking.DTO.UpdatePasswordDto;
 import hardware.service.booking.DTO.UserDto;
 import hardware.service.booking.DTO.UserIdDto;
 import hardware.service.booking.DTO.UserIssueDto;
 import hardware.service.booking.DTO.UserLoginDto;
 import hardware.service.booking.DTO.UserMessageSendDto;
 import hardware.service.booking.DTO.UserServiceDto;
+import hardware.service.booking.servicelayer.Validation;
 
 @Component
 public class UserDaoImpl implements UserDao{
 
 	private JdbcTemplate jdbcTemplate = new JdbcTemplate(getDataSource());
+	
+	private Validation validation = new Validation();
 	
 	@Override
 	public void insert(UserDto user) {
@@ -83,6 +88,7 @@ public class UserDaoImpl implements UserDao{
 		
 	}
 	
+	
 	@Override
 	public UserLoginDto getAdminDetails(String email) {
 		
@@ -90,9 +96,19 @@ public class UserDaoImpl implements UserDao{
 		
 		String sql = "select * from Ausers where email = ? ";
 		
+		try {
+			
 		UserLoginDto userLoginDto = jdbcTemplate.queryForObject(sql,new BeanPropertyRowMapper<UserLoginDto>(UserLoginDto.class),email);
 		
 		return userLoginDto;
+		
+		}
+		
+		catch(EmptyResultDataAccessException e) {
+			
+			return null;
+			
+		}
 		
 	}
 
@@ -198,12 +214,52 @@ public class UserDaoImpl implements UserDao{
 		return count;
 	}
 	
+	@Override
+	public void updatePassword(ForgotPasswordDto user) {
+		
+		String sql = "update users set passWord = ? where email = ?";
+		
+		jdbcTemplate.update(sql,user.getPassword(),user.getEmail());
+		
+	}
+	
+	public boolean changePassword(UpdatePasswordDto userEnteredInfo) {
+		
+		UserLoginDto userLoginDto = getAdminDetails(userEnteredInfo.getEmail());
+		
+		if(!validation.validateChangePassword(userEnteredInfo,userLoginDto))
+		{
+			return false;
+		}
+		
+		if(!setNewPassword(userEnteredInfo))
+		{
+			return false;
+		}
+		
+		return true;
+		
+	}
+	
+	@Override
+	public boolean setNewPassword(UpdatePasswordDto user) {
+		
+		String sql = "update ausers set passWord = ? where email = ?";
+		
+		int rowCount = jdbcTemplate.update(sql,user.getNewPassword(),user.getEmail());
+		
+		if(rowCount==0)
+			return false;
+		
+		return true;
+	}
+	
 	public DriverManagerDataSource getDataSource() {
 	    DriverManagerDataSource dataSource = new DriverManagerDataSource();
 	    dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-	    dataSource.setUrl(System.getenv("SPRING_DATASOURCE_URL"));
-	    dataSource.setUsername(System.getenv("SPRING_DATASOURCE_USERNAME"));
-	    dataSource.setPassword(System.getenv("SPRING_DATASOURCE_PASSWORD"));
+	    dataSource.setUrl("jdbc:mysql://localhost:3306/servicebooking?useSSL=false");
+	    dataSource.setUsername("root");
+	    dataSource.setPassword("Srinu379@");
 	    return dataSource;
 	}
 

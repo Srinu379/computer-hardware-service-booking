@@ -4,12 +4,11 @@ import java.security.SecureRandom;
 
 public class GetOtp {
 
-	public int getOtp() 
+	public String getOtp() 
 	{
 		SecureRandom secureRandom = new SecureRandom();
-		int otp = secureRandom.nextInt(10000);
-		
-		return otp;
+		Integer otp = secureRandom.nextInt(10000);
+		return otp.toString();
 	}
 
 }

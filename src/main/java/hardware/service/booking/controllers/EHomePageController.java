@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import hardware.service.booking.DAO.UserDaoImpl;
+import hardware.service.booking.DTO.UpdatePasswordDto;
 import hardware.service.booking.DTO.UserEmailDto;
 import hardware.service.booking.DTO.UserIssueDto;
 import hardware.service.booking.DTO.UserLoginDto;
@@ -97,6 +98,27 @@ public class EHomePageController {
 	{
 		
 		return "editpage";
+	}
+	
+	@RequestMapping("/change-password")
+	public String getChangePasswordPage()
+	{
+		return "change-password";
+	}
+	
+	@RequestMapping("/process-change-password")
+	public String processChangePassword(UpdatePasswordDto userEnteredInfo)
+	{
+		
+		System.out.println(userEnteredInfo.getEmail());
+		System.out.println(userEnteredInfo.getPassWord());
+		
+		if(!userDaoImpl.changePassword(userEnteredInfo))
+		{
+		  return "change-password";
+		}
+		
+		return "update-successful";
 	}
 
 }

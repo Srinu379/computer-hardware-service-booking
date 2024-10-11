@@ -7,12 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Engineer Dashboard - TechFix Solutions</title>
     <link rel="stylesheet" href="<c:url value='/resources/css/e-homepage.css' />">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">TechFix Solutions</div>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
             <ul>
                 <li><a href="#overview">Overview</a></li>
                 <li><a href="<c:url value='view-pending-issues' />">Issues</a></li>
@@ -23,7 +27,7 @@
     </header>
 
     <main>
-        <section id="hero">
+         <section id="hero">
             <h1>Welcome, ${userName}</h1>
             <p>Here's your overview for today</p>
         </section>
@@ -67,9 +71,9 @@
             </div>
         </section>
     </main>
-
+    
     <footer>
-        <div class="footer-content">
+		<div class="footer-content">
             <div class="footer-section">
                 <h3>About Us</h3>
                 <p>TechFix Solutions provides top-notch IT support and services.</p>
