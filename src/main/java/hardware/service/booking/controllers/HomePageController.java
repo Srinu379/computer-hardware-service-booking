@@ -38,7 +38,6 @@ public class HomePageController {
 		
 		user.setEmail(email);
 		user.setUserName(userName);
-		user.setMessage("Enter Your Message");
 		
 		model.addAttribute("user",user);
 		

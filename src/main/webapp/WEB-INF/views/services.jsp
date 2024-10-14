@@ -22,7 +22,7 @@
                 <li><a href="<c:url value='services' />">Services</a></li>
                 <li><a href="<c:url value='about-us' />">About</a></li>
                 <li><a href="<c:url value='contact-us' />">Contact</a></li>
-                <li><a href="<c:url value='service-now' />">ServiceNow</a></li>
+                <li><a href="<c:url value='service-now' />">Service Status</a></li>
                 <li><a href="<c:url value='/' />" class="btn-logout">Logout</a></li>
             </ul>
         </nav>

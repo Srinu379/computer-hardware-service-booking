@@ -43,11 +43,13 @@ nav {
     font-size: 1.5rem;
     font-weight: bold;
     color: #4CAF50;
+    order: 1;
 }
 
 nav ul {
     display: flex;
     list-style: none;
+    order: 2;
 }
 
 nav ul li {
@@ -72,6 +74,7 @@ nav ul li {
     color: #4CAF50;
     cursor: pointer;
     display: none;
+    order: 3;
 }
 
 #check {
@@ -160,8 +163,8 @@ footer {
 @media (max-width: 858px) {
     .checkbtn {
         display: block;
-        float: right;
     }
+    
     nav ul {
         position: fixed;
         width: 100%;
@@ -173,15 +176,18 @@ footer {
         transition: all .5s;
         flex-direction: column;
     }
+    
     nav ul li {
         display: block;
         margin: 20px 0;
         line-height: 30px;
     }
+    
     nav ul li a {
         font-size: 20px;
         color: white;
     }
+    
     .btn-logout {
         background-color: transparent;
         color: white;
@@ -190,6 +196,7 @@ footer {
         display: inline-block;
         margin-top: 20px;
     }
+    
     #check:checked ~ ul {
         left: 0;
     }
@@ -211,4 +218,9 @@ footer {
     .contact-content {
         padding: 1.5rem;
     }
+}
+
+input[readonly] {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
 }

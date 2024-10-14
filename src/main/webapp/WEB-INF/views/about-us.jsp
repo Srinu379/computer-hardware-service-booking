@@ -22,14 +22,14 @@
             <li><a href="<c:url value='services' />">Services</a></li>
             <li><a href="<c:url value='about-us' />">About</a></li>
             <li><a href="<c:url value='contact-us' />">Contact</a></li>
-            <li><a href="<c:url value='service-now' />">ServiceNow</a></li>
+            <li><a href="<c:url value='service-now' />">Service Status</a></li>
             <li><a href="<c:url value='/' />" class="btn-logout">Logout</a></li>
         </ul>
     </nav>
   </header>
        <main>
         <section class="hero">
-            <h1>About Service Booking</h1>
+            <h1>About Tech Fix</h1>
             <p>Your trusted partner in professional services</p>
         </section>
         <section class="about-content">

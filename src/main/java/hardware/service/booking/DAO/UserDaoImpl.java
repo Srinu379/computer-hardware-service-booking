@@ -254,6 +254,15 @@ public class UserDaoImpl implements UserDao{
 		return true;
 	}
 	
+//	public DriverManagerDataSource getDataSource() {
+//	    DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//	    dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+//	    dataSource.setUrl("jdbc:mysql://localhost:3306/servicebooking?useSSL=false");
+//	    dataSource.setUsername("root");
+//	    dataSource.setPassword("Srinu379@");
+//	    return dataSource;
+//	}
+	
 	public DriverManagerDataSource getDataSource() {
 	    DriverManagerDataSource dataSource = new DriverManagerDataSource();
 	    dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");

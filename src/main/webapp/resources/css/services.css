@@ -41,11 +41,13 @@ nav {
     font-size: 1.5rem;
     font-weight: bold;
     color: #4CAF50;
+    order: 1;
 }
 
 nav ul {
     display: flex;
     list-style: none;
+    order: 2;
 }
 
 nav ul li {
@@ -70,6 +72,7 @@ nav ul li {
     color: #4CAF50;
     cursor: pointer;
     display: none;
+    order: 3;
 }
 
 #check {
@@ -177,30 +180,37 @@ footer {
 
 /* Responsive design */
 @media (max-width: 858px) {
+    nav {
+        justify-content: space-between;
+    }
+
     .checkbtn {
         display: block;
-        float: right;
     }
+
     nav ul {
         position: fixed;
         width: 100%;
         height: calc(100vh - 80px);
         background: #2c3e50;
         top: 80px;
-        left: -100%;
+        left: -100%; /* Changed from right to left */
         text-align: center;
         transition: all .5s;
         flex-direction: column;
     }
+
     nav ul li {
         display: block;
         margin: 20px 0;
         line-height: 30px;
     }
+
     nav ul li a {
         font-size: 20px;
         color: white;
     }
+
     .btn-logout {
         background-color: transparent;
         color: white;
@@ -209,8 +219,9 @@ footer {
         display: inline-block;
         margin-top: 20px;
     }
+
     #check:checked ~ ul {
-        left: 0;
+        left: 0; /* Changed from right to left */
     }
     
     .hero h1 {
@@ -226,12 +237,15 @@ footer {
     .logo {
         font-size: 20px;
     }
+
     nav {
         padding: 0 3%;
     }
+
     nav ul li {
         margin: 15px 0;
     }
+
     nav ul li a, .btn-logout {
         font-size: 18px;
     }

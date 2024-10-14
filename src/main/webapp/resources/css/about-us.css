@@ -41,11 +41,13 @@ nav {
     font-size: 1.5rem;
     font-weight: bold;
     color: #4CAF50;
+    order: 1;
 }
 
 nav ul {
     display: flex;
     list-style: none;
+    order: 2;
 }
 
 nav ul li {
@@ -70,6 +72,7 @@ nav ul li {
     color: #4CAF50;
     cursor: pointer;
     display: none;
+    order: 3;
 }
 
 #check {
@@ -193,7 +196,6 @@ footer {
 @media (max-width: 858px) {
     .checkbtn {
         display: block;
-        float: right;
     }
     nav ul {
         position: fixed;

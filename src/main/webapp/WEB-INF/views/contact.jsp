@@ -23,7 +23,7 @@
             <li><a href="<c:url value='services' />">Services</a></li>
             <li><a href="<c:url value='about-us' />">About</a></li>
             <li><a href="<c:url value='contact-us' />">Contact</a></li>
-            <li><a href="<c:url value='service-now' />">ServiceNow</a></li>
+            <li><a href="<c:url value='service-now' />">Service Status</a></li>
             <li><a href="<c:url value='/' />" class="btn-logout">Logout</a></li>
         </ul>
     </nav>
@@ -36,20 +36,20 @@
             <div class="contact-info">
                 <div>
                     <h2>Our Office</h2>
-                    <p>Klh</p>
+                    <p>Gachibowli, 	Hyderabad</p>
                 </div>
                 <div>
                     <h2>Email</h2>
-                    <p>info@servicebooking.com</p>
+                    <p>2210030391@klh.edu.in</p>
                 </div>
                 <div>
                     <h2>Phone</h2>
-                    <p>+91 9999999999</p>
+                    <p>+91 9876543210</p>
                 </div>
             </div>
             <form:form class="contact-form" action="contact-success?emailUser=${email}" modelAttribute="user">
-                <form:input name="name" path="userName" placeholder="Enter your name" />
-                <form:input name="email" path="email" placeholder="Enter your email"/>
+                <form:input name="name" path="userName" placeholder="Enter your name" readonly="true" />
+                <form:input name="email" path="email" placeholder="Enter your email" readonly="true" />
                 <form:textarea name="message" path="message" placeholder="Enter your message"/>
                 <input type="submit" value="Submit" />
             </form:form>
