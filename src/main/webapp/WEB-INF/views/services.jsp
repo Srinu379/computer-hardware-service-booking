@@ -16,7 +16,7 @@
             <label for="check" class="checkbtn">
                 <i class="fas fa-bars"></i>
             </label>
-            <div class="logo">Service Booking</div>
+            <div class="logo">Tech Fix</div>
             <ul>
                 <li><a href="<c:url value='homepage' />">Home</a></li>
                 <li><a href="<c:url value='services' />">Services</a></li>
