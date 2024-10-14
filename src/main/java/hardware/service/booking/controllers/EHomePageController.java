@@ -25,6 +25,15 @@ public class EHomePageController {
 	public String getHomePage(Model model)
 	{
 		
+		int totalCount = userDaoImpl.getCount();
+		model.addAttribute("totalCount",totalCount);
+		
+		int completedCount = userDaoImpl.getCompletedCount();
+		model.addAttribute("completedCount",completedCount);
+		
+		int pendingCount = userDaoImpl.getPendingCount();
+		model.addAttribute("pendingCount",pendingCount);
+		
 		return "e-homepage";
 	}
 	

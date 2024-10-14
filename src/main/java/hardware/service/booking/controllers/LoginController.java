@@ -2,6 +2,7 @@ package hardware.service.booking.controllers;
 
 
 import org.springframework.stereotype.Controller;
+
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -10,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import hardware.service.booking.DAO.UserDaoImpl;
 import hardware.service.booking.DTO.ForgotPasswordDto;
-import hardware.service.booking.DTO.UserDto;
 import hardware.service.booking.DTO.UserEmailDto;
 import hardware.service.booking.DTO.UserLoginDto;
 import hardware.service.booking.servicelayer.GetOtp;

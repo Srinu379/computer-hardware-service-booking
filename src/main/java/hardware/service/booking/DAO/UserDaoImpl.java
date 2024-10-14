@@ -1,7 +1,6 @@
 package hardware.service.booking.DAO;
 
 
-
 import java.util.List;
 
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -30,9 +29,6 @@ public class UserDaoImpl implements UserDao{
 	@Override
 	public void insert(UserDto user) {
 		
-		
-		System.out.println("Inside The Dao Layer");
-		
 		String sql = "INSERT INTO users(id,email,userName,passWord) VALUES(?,?,?,?)";
 		
 		Object object[] = {user.getId(),user.getEmail(),user.getUserName(),user.getPassWord()};
@@ -42,8 +38,6 @@ public class UserDaoImpl implements UserDao{
 	
 	@Override
 	public void insert(UserIdDto user) {
-		
-		System.out.println("Inside The Dao Layer");
 		
 		String sql = "INSERT INTO issues(userid,issue,description) VALUES(?,?,?)";
 		
@@ -55,20 +49,15 @@ public class UserDaoImpl implements UserDao{
 	@Override
 	public void insert(UserMessageSendDto user) {
 		
-		System.out.println("Inside The Dao Layer");
+		String sql = "INSERT INTO messages(id,userid,message) VALUES(?,?,?)";
 		
-		String sql = "INSERT INTO messages(userid,message) VALUES(?,?)";
-		
-		Object object[] = {user.getUserId(),user.getMessage()};
+		Object object[] = {user.getId(),user.getUserId(),user.getMessage()};
 		
 		jdbcTemplate.update(sql,object);
 	}
 
 	@Override
 	public UserLoginDto getUserDetails(String email) {
-		
-		
-		System.out.println("Inside The Dao Layer");
 		
 		String sql = "select * from users where email = ? ";
 		
@@ -92,8 +81,6 @@ public class UserDaoImpl implements UserDao{
 	@Override
 	public UserLoginDto getAdminDetails(String email) {
 		
-		System.out.println("Inside The Dao Layer");
-		
 		String sql = "select * from Ausers where email = ? ";
 		
 		try {
@@ -114,8 +101,6 @@ public class UserDaoImpl implements UserDao{
 
 	@Override
 	public UserIdDto getUserId(String email) {
-		
-		System.out.println("Inside The Dao Layer");
 		
 		String sql = "select id from users where email = ? ";
 		
