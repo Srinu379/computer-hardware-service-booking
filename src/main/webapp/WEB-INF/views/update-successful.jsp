@@ -13,7 +13,7 @@
     <h1>Password Updated Successfully!</h1>
     <p>Your password has been successfully updated. You can now use your new password to log in to your account.</p>
 
-    <a href="<c:url value='login' />" class="btn-back">Back to Login</a>
+    <a href="<c:url value='login-page' />" class="btn-back">Back to Login</a>
   </div>
 </body>
 </html>

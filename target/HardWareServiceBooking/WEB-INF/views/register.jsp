@@ -46,7 +46,7 @@
       <label for="email">Email</label>
       <form:input path="email" id="email"/>
       <form:errors path="email" cssClass="error"/>
-      <p>${userExists}</p>
+      <p class="error">${userExists}</p>
     </div>
     
     <div class="form-group">

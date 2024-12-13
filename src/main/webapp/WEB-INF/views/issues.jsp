@@ -1,4 +1,4 @@
- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -16,31 +16,53 @@
 <body>
     <div class="container">
         <h1><i class="fas fa-clipboard-list"></i> My Complaints Dashboard</h1>
+        
+        <div class="search-container">
+		    <form action="search-users" method="GET">
+		        <input type="text" name="email" placeholder="Search by Email...">
+		        <button type="submit"><i class="fas fa-search"></i> Search</button>
+		    </form>
+		</div>
 
-        <div class="complaints-grid">
-           <c:if test="${not empty users}" >
-            <c:forEach items="${users}" var="user">
-                <div class="complaint-card">
-                    <i class="fas fa-tools complaint-icon"></i>
-                    <h2>Issue: ${user.issue}</h2>
-                    <p>Description: ${user.description}</p>
-                    <p>Email: ${user.email}</p>
-                    <p>Username: ${user.userName}</p>
-                    <p>
-                        <span class="status status-${user.status.toLowerCase()}">Status: ${user.status}</span>
-                    </p>
-                    <p class="date">
-                        <i class="far fa-calendar-alt"></i>
-                        Registered time: ${user.createdAt}
-                    </p>
-                    <a href="#" class="edit-btn">Edit</a>
-                </div>
-            </c:forEach>
-            </c:if>
-            <c:if test="${empty users}" >
-            	<h2 align="center">No Complaints</h2>
-            </c:if>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Issues</th>
+                        <th>Description</th>
+                        <th>email</th>
+                        <th>status</th>
+                        <th>Registered Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                      <c:choose>
+					    <c:when test="${not empty users}">
+					        <c:forEach items="${users}" var="user">
+					            <tr>
+					                <td data-label="Student Name">${user.userName}</td>
+					                <td data-label="Roll No">${user.issue}</td>
+					                <td data-label="Department">${user.description}</td>
+					                <td data-label="Description">${user.email}</td>
+					                <td data-label="Status">
+									    <span class="status-cell ${user.status.toLowerCase() == 'pending' ? 'status-pending' : 'status-completed'}">
+									        ${user.status}
+									    </span>
+									</td>
+									<td data-label="Registered Time">${user.createdAt}</td>
+					            </tr>
+					        </c:forEach>
+					    </c:when>
+					    <c:otherwise>
+					        <tr>
+					            <td colspan="6" class="no-complaints">No Complaints</td>
+					        </tr>
+					    </c:otherwise>
+					</c:choose>
+                </tbody>
+            </table>
         </div>
     </div>
-  </body>
+</body>
 </html>

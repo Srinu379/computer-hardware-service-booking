@@ -239,10 +239,20 @@ public class UserDaoImpl implements UserDao{
 		return true;
 	}
 	
+	public List<UserIssueDto> getUserIssues(String email)
+	{
+		String sql = "select u.userName,u.id,i.description,i.issue,i.createdAt,i.status from issues i INNER JOIN users u on i.userid = u.id where u.email = ?";
+		
+		List<UserIssueDto> user = jdbcTemplate.query(sql,new BeanPropertyRowMapper<UserIssueDto>(UserIssueDto.class),email);
+		
+		return user;
+	}
+	
+	
 //	public DriverManagerDataSource getDataSource() {
 //	    DriverManagerDataSource dataSource = new DriverManagerDataSource();
 //	    dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-//	    dataSource.setUrl("jdbc:mysql://localhost:3306/servicebooking?useSSL=false");
+//	    dataSource.setUrl("jdbc:mysql://localhost:3306/servicebooking?useSSL=false&allowPublicKeyRetrieval=true");
 //	    dataSource.setUsername("root");
 //	    dataSource.setPassword("Srinu379@");
 //	    return dataSource;

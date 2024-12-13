@@ -6,18 +6,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services - Computer Hardware Service</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="<c:url value='/resources/css/services.css' />">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">Service Booking</div>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <div class="logo">Tech Fix</div>
             <ul>
                 <li><a href="<c:url value='homepage' />">Home</a></li>
                 <li><a href="<c:url value='services' />">Services</a></li>
                 <li><a href="<c:url value='about-us' />">About</a></li>
                 <li><a href="<c:url value='contact-us' />">Contact</a></li>
-                <li><a href="<c:url value='service-now' />">ServiceNow</a></li>
+                <li><a href="<c:url value='service-now' />">Service Status</a></li>
                 <li><a href="<c:url value='/' />" class="btn-logout">Logout</a></li>
             </ul>
         </nav>

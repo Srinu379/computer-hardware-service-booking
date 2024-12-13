@@ -8,9 +8,11 @@ C:\Users\srinu\eclipse-workspace\ServiceBooking-Hardware\src\main\java\hardware\
 C:\Users\srinu\eclipse-workspace\ServiceBooking-Hardware\src\main\java\hardware\service\booking\DTO\UserDto.java
 C:\Users\srinu\eclipse-workspace\ServiceBooking-Hardware\src\main\java\hardware\service\booking\DTO\UserIssueDto.java
 C:\Users\srinu\eclipse-workspace\ServiceBooking-Hardware\src\main\java\hardware\service\booking\DTO\UserIdDto.java
+C:\Users\srinu\eclipse-workspace\ServiceBooking-Hardware\src\main\java\hardware\service\booking\DTO\UpdatePasswordDto.java
 C:\Users\srinu\eclipse-workspace\ServiceBooking-Hardware\src\main\java\hardware\service\booking\DTO\UserEmailDto.java
 C:\Users\srinu\eclipse-workspace\ServiceBooking-Hardware\src\main\java\hardware\service\booking\DAO\JavaMailSenderApi.java
 C:\Users\srinu\eclipse-workspace\ServiceBooking-Hardware\src\main\java\hardware\service\booking\DAO\UserDaoImpl.java
+C:\Users\srinu\eclipse-workspace\ServiceBooking-Hardware\src\main\java\hardware\service\booking\DTO\ForgotPasswordDto.java
 C:\Users\srinu\eclipse-workspace\ServiceBooking-Hardware\src\main\java\hardware\service\booking\controllers\RegisterController.java
 C:\Users\srinu\eclipse-workspace\ServiceBooking-Hardware\src\main\java\hardware\service\booking\servicelayer\GetOtp.java
 C:\Users\srinu\eclipse-workspace\ServiceBooking-Hardware\src\main\java\hardware\service\booking\DTO\UserBookDto.java

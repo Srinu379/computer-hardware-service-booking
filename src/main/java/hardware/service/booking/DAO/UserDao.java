@@ -35,6 +35,8 @@ public interface UserDao {
 	
 	List<UserIssueDto> getUserAllDetailsByPendingStatus();
 	
+	List<UserIssueDto> getUserIssues(String email);
+	
 	int getCount();
 	
 	int getCompletedCount();

@@ -67,7 +67,7 @@
             </button>
         </form:form>
         <div class="additional-links">
-            <a href="#" class="forgot-password">Forgot Password?</a>
+            <a href="<c:url value='forgot-password' />" class="forgot-password">Forgot Password?</a>
             <a href="<c:url value='register' />" class="register">Register</a>
         </div>
     </div>

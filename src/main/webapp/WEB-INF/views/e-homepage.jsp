@@ -5,14 +5,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engineer Dashboard - TechFix Solutions</title>
+    <title>Engineer Dashboard - TechFix</title>
     <link rel="stylesheet" href="<c:url value='/resources/css/e-homepage.css' />">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">TechFix Solutions</div>
+            <div class="logo">TechFix</div>
             <input type="checkbox" id="check">
             <label for="check" class="checkbtn">
                 <i class="fas fa-bars"></i>

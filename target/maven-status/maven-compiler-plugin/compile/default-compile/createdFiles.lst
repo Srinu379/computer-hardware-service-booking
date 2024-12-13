@@ -4,8 +4,10 @@ hardware\service\booking\servicelayer\ValidateOtp.class
 hardware\service\booking\servicelayer\SendMessage.class
 hardware\service\booking\controllers\LoginController.class
 hardware\service\booking\DTO\UserMessageSendDto.class
+hardware\service\booking\DTO\ForgotPasswordDto.class
 hardware\service\booking\DTO\UserLoginDto.class
 hardware\service\booking\DTO\UserEmailDto.class
+hardware\service\booking\DTO\UpdatePasswordDto.class
 hardware\service\booking\DTO\UserIdDto.class
 hardware\service\booking\controllers\RegisterController.class
 hardware\service\booking\controllers\EHomePageController.class

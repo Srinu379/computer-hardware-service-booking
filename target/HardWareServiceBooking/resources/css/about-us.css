@@ -34,17 +34,20 @@ nav {
     padding: 1rem 5%;
     max-width: 1200px;
     margin: 0 auto;
+    height: 80px;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
     color: #4CAF50;
+    order: 1;
 }
 
 nav ul {
     display: flex;
     list-style: none;
+    order: 2;
 }
 
 nav ul li {
@@ -61,6 +64,19 @@ nav ul li {
 
 .btn-logout:hover {
     background-color: #45a049;
+}
+
+/* Hamburger menu styles */
+.checkbtn {
+    font-size: 30px;
+    color: #4CAF50;
+    cursor: pointer;
+    display: none;
+    order: 3;
+}
+
+#check {
+    display: none;
 }
 
 /* Main content styles */
@@ -168,28 +184,81 @@ footer {
 }
 
 /* Responsive design */
-@media (max-width: 768px) {
-    nav {
+@media (max-width: 952px) {
+    .logo {
+        font-size: 25px;
+    }
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 858px) {
+    .checkbtn {
+        display: block;
+    }
+    nav ul {
+        position: fixed;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
         flex-direction: column;
     }
-
-    nav ul {
-        margin-top: 1rem;
-    }
-
     nav ul li {
-        margin: 0.5rem 0;
+        display: block;
+        margin: 20px 0;
+        line-height: 30px;
     }
-
+    nav ul li a {
+        font-size: 20px;
+        color: white;
+    }
+    .btn-logout {
+        background-color: transparent;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        display: inline-block;
+        margin-top: 20px;
+    }
+    #check:checked ~ ul {
+        left: 0;
+    }
+    
     .hero h1 {
         font-size: 2rem;
     }
-
+    
     .about-content {
         padding: 1.5rem;
     }
-
+    
     .team-members {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 20px;
+    }
+    nav {
+        padding: 0 3%;
+    }
+    nav ul li {
+        margin: 15px 0;
+    }
+    nav ul li a, .btn-logout {
+        font-size: 18px;
+    }
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    .about-content {
+        padding: 1rem;
     }
 }

@@ -53,7 +53,7 @@ h1 {
 }
 .status-pending { background-color: #ffeaa7; color: #d35400; }
 .status-inprogress { background-color: #81ecec; color: #00b894; }
-.status-resolved { background-color: #55efc4; color: #00b894; }
+.status-completed { background-color: #27ae60; color: #ffffff; }
 .complaint-icon {
     float: right;
     font-size: 1.5em;

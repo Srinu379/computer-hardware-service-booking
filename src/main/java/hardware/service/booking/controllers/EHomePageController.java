@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import hardware.service.booking.DAO.UserDaoImpl;
 import hardware.service.booking.DTO.UpdatePasswordDto;
+import hardware.service.booking.DTO.UserDto;
 import hardware.service.booking.DTO.UserEmailDto;
 import hardware.service.booking.DTO.UserIssueDto;
 import hardware.service.booking.DTO.UserLoginDto;
@@ -128,6 +129,21 @@ public class EHomePageController {
 		}
 		
 		return "update-successful";
+	}
+	
+	@RequestMapping("/search-users")
+	public String getUserIssues(Model model,UserDto user)
+	{
+		
+		System.out.println(user.getEmail());
+		
+		List<UserIssueDto> users = userDaoImpl.getUserIssues(user.getEmail());
+		
+		System.out.println(user.getEmail());
+		
+		model.addAttribute("users",users);
+		
+		return "issues";
 	}
 
 }

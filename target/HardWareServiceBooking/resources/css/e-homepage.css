@@ -31,6 +31,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
+    height: 80px;
 }
 
 .logo {
@@ -58,6 +59,20 @@ nav ul li {
 
 .btn-logout:hover {
     background-color: #45a049;
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: #4CAF50;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
 }
 
 /* Main content styles */
@@ -124,7 +139,7 @@ h1, h2, h3 {
     transform: translateY(-5px);
 }
 
-/* Why Choose Us section */
+/* Features section */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -136,29 +151,6 @@ h1, h2, h3 {
     padding: 2rem;
     border-radius: 5px;
     text-align: center;
-}
-
-/* Testimonials section */
-.testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.testimonial {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.testimonial p {
-    font-style: italic;
-    margin-bottom: 1rem;
-}
-
-.testimonial cite {
-    font-weight: bold;
 }
 
 /* Footer styles */
@@ -187,10 +179,6 @@ footer {
     margin-bottom: 0.5rem;
 }
 
-.social-icons a {
-    margin-right: 1rem;
-}
-
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
@@ -198,16 +186,83 @@ footer {
 }
 
 /* Responsive design */
-@media (max-width: 768px) {
-    nav {
+@media (max-width: 952px) {
+    .logo {
+        font-size: 30px;
+        padding-left: 50px;
+    }
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 858px) {
+    .checkbtn {
+        display: block;
+    }
+    nav ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
         flex-direction: column;
     }
-
-    nav ul {
-        margin-top: 1rem;
-    }
-
     nav ul li {
-        margin: 0.5rem 0;
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a {
+        font-size: 20px;
+        color: white;
+    }
+    .btn-logout {
+        background-color: transparent;
+        color: white;
+        padding: 0;
+    }
+    #check:checked ~ ul {
+        left: 0;
+    }
+    
+    #hero h1 {
+        font-size: 2rem;
+    }
+    #hero p {
+        font-size: 1rem;
+    }
+    .service-grid,
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.2rem;
+        padding-left: 20px;
+    }
+    nav {
+        padding: 0 3%;
+    }
+    .checkbtn {
+        margin-right: 20px;
+    }
+    section {
+        padding: 2rem 3%;
+    }
+    #hero {
+        padding: 4rem 3%;
+    }
+    .btn-cta {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
     }
 }

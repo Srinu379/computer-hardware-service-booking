@@ -7,23 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Service Booking - Home</title>
     <link rel="stylesheet" href="<c:url value='/resources/css/homepage.css' />">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">Service Booking</div>
+            <div class="logo">Tech Fix</div>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
             <ul>
                 <li><a href="<c:url value='homepage' />">Home</a></li>
                 <li><a href="<c:url value='services' />">Services</a></li>
                 <li><a href="<c:url value='about-us' />">About</a></li>
                 <li><a href="<c:url value='contact-us' />">Contact</a></li>
-                <li><a href="<c:url value='service-now' />">ServiceNow</a></li>
+                <li><a href="<c:url value='service-now' />">Service Status</a></li>
                 <li><a href="<c:url value='/' />" class="btn-logout">Logout</a></li>
             </ul>
         </nav>
     </header>
-
-    <main>
+   <main>
         <section id="hero">
             <h1>Book Your Service Today</h1>
             <p>Fast, reliable, and professional services at your fingertips</p>
@@ -102,8 +106,8 @@
             </div>
             <div class="footer-section">
                 <h3>Contact Us</h3>
-                <p>Email: info@servicebooking.com</p>
-                <p>Phone: (123) 456-7890</p>
+                <p>Email: 2210030391@klh.edu.in</p>
+                <p>Phone: (+91) 9876543210</p>
             </div>
             <div class="footer-section">
                 <h3>Follow Us</h3>
