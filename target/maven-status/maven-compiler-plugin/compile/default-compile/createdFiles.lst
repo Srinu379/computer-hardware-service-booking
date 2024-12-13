@@ -1,6 +1,7 @@
 hardware\service\booking\DTO\UserIssueDto.class
 hardware\service\booking\servicelayer\GetOtp.class
 hardware\service\booking\servicelayer\ValidateOtp.class
+hardware\service\booking\controllers\AdminHomePageController.class
 hardware\service\booking\servicelayer\SendMessage.class
 hardware\service\booking\controllers\LoginController.class
 hardware\service\booking\DTO\UserMessageSendDto.class
